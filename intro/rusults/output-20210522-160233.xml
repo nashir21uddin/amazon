@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.8.9 on win32)" generated="20210522 16:02:33.908" rpa="false" schemaversion="2">
+<suite id="s1" name="Xml Tests" source="C:\development\robot-scripts\intro\tests\xml_tests.robot">
+<test id="s1-t1" name="Verify Menu Count">
+<kw name="Should be one menu in the file" library="Breakfast_Menu">
+<kw name="Get Element Count" library="XML">
+<var>${menu_count}</var>
+<arg>${XML_MENU_PATH}</arg>
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<msg timestamp="20210522 16:02:33.943" level="INFO">1 element matched '.'.</msg>
+<msg timestamp="20210522 16:02:33.943" level="INFO">${menu_count} = 1</msg>
+<status status="PASS" starttime="20210522 16:02:33.942" endtime="20210522 16:02:33.943"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${menu_count}</arg>
+<arg>${EXPECTED_MENU_COUNT}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<msg timestamp="20210522 16:02:33.943" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210522 16:02:33.943" endtime="20210522 16:02:33.943"/>
+</kw>
+<status status="PASS" starttime="20210522 16:02:33.942" endtime="20210522 16:02:33.943"/>
+</kw>
+<tag>XML</tag>
+<status status="PASS" starttime="20210522 16:02:33.941" endtime="20210522 16:02:33.944"/>
+</test>
+<test id="s1-t2" name="Verify Root">
+<kw name="Verify Menu Name" library="Breakfast_Menu">
+<kw name="Parse Xml" library="XML">
+<var>${root}</var>
+<arg>${XML_MENU_PATH}</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20210522 16:02:33.946" level="INFO">${root} = &lt;Element 'breakfast_menu' at 0x00000192F0C90B30&gt;</msg>
+<status status="PASS" starttime="20210522 16:02:33.946" endtime="20210522 16:02:33.946"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${root.tag}</arg>
+<arg>breakfast_menu</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210522 16:02:33.946" endtime="20210522 16:02:33.947"/>
+</kw>
+<status status="PASS" starttime="20210522 16:02:33.945" endtime="20210522 16:02:33.947"/>
+</kw>
+<tag>XML</tag>
+<status status="PASS" starttime="20210522 16:02:33.945" endtime="20210522 16:02:33.947"/>
+</test>
+<test id="s1-t3" name="Verify Food Count">
+<kw name="Verify Food Count" library="Breakfast_Menu">
+<kw name="Get Element Count" library="XML">
+<var>${food_count}</var>
+<arg>${XML_MENU_PATH}</arg>
+<arg>food</arg>
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<msg timestamp="20210522 16:02:33.949" level="INFO">17 elements matched 'food'.</msg>
+<msg timestamp="20210522 16:02:33.949" level="INFO">${food_count} = 17</msg>
+<status status="PASS" starttime="20210522 16:02:33.949" endtime="20210522 16:02:33.949"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${food_count}</arg>
+<arg>${EXPECTED_FOOD_COUNT}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<msg timestamp="20210522 16:02:33.950" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20210522 16:02:33.950" level="FAIL">17.0 != 5.0</msg>
+<status status="FAIL" starttime="20210522 16:02:33.950" endtime="20210522 16:02:33.950"/>
+</kw>
+<status status="FAIL" starttime="20210522 16:02:33.949" endtime="20210522 16:02:33.950"/>
+</kw>
+<tag>XML</tag>
+<status status="FAIL" starttime="20210522 16:02:33.948" endtime="20210522 16:02:33.950">17.0 != 5.0</status>
+</test>
+<test id="s1-t4" name="Verify First Food">
+<kw name="Verify First Food Name" library="Breakfast_Menu">
+<kw name="Get Element" library="XML">
+<var>${first_food_name}</var>
+<arg>${XML_MENU_PATH}</arg>
+<arg>food[1]/name</arg>
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<msg timestamp="20210522 16:02:33.953" level="INFO">${first_food_name} = &lt;Element 'name' at 0x00000192F0CA6EF0&gt;</msg>
+<status status="PASS" starttime="20210522 16:02:33.953" endtime="20210522 16:02:33.953"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${first_food_name.text}</arg>
+<arg>Belgian Waffles</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210522 16:02:33.953" endtime="20210522 16:02:33.954"/>
+</kw>
+<status status="PASS" starttime="20210522 16:02:33.952" endtime="20210522 16:02:33.954"/>
+</kw>
+<kw name="Verify First Food Price" library="Breakfast_Menu">
+<kw name="Get Element" library="XML">
+<var>${first_food_price}</var>
+<arg>${XML_MENU_PATH}</arg>
+<arg>food[1]/price</arg>
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<msg timestamp="20210522 16:02:33.955" level="INFO">${first_food_price} = &lt;Element 'price' at 0x00000192F0CBB1D0&gt;</msg>
+<status status="PASS" starttime="20210522 16:02:33.955" endtime="20210522 16:02:33.955"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${first_food_price.text}</arg>
+<arg>$5.95</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210522 16:02:33.955" endtime="20210522 16:02:33.956"/>
+</kw>
+<status status="PASS" starttime="20210522 16:02:33.954" endtime="20210522 16:02:33.956"/>
+</kw>
+<kw name="Verify First Food Calories" library="Breakfast_Menu">
+<kw name="Get Element" library="XML">
+<var>${first_food_calories}</var>
+<arg>${XML_MENU_PATH}</arg>
+<arg>food[1]/calories</arg>
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<msg timestamp="20210522 16:02:33.957" level="INFO">${first_food_calories} = &lt;Element 'calories' at 0x00000192F0CBBBD0&gt;</msg>
+<status status="PASS" starttime="20210522 16:02:33.956" endtime="20210522 16:02:33.957"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${first_food_calories.text}</arg>
+<arg>650</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210522 16:02:33.957" endtime="20210522 16:02:33.958"/>
+</kw>
+<status status="PASS" starttime="20210522 16:02:33.956" endtime="20210522 16:02:33.958"/>
+</kw>
+<tag>XML</tag>
+<status status="PASS" starttime="20210522 16:02:33.952" endtime="20210522 16:02:33.958"/>
+</test>
+<test id="s1-t5" name="Add a Food">
+<kw name="Add New food" library="Breakfast_Menu">
+<kw name="Parse Xml" library="XML">
+<var>${root}</var>
+<arg>${XML_MENU_PATH}</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20210522 16:02:33.960" level="INFO">${root} = &lt;Element 'breakfast_menu' at 0x00000192F0CBB720&gt;</msg>
+<status status="PASS" starttime="20210522 16:02:33.960" endtime="20210522 16:02:33.960"/>
+</kw>
+<kw name="Add Element" library="XML">
+<arg>${root}</arg>
+<arg>&lt;food&gt;&lt;/food&gt;</arg>
+<doc>Adds a child element to the specified element.</doc>
+<status status="PASS" starttime="20210522 16:02:33.960" endtime="20210522 16:02:33.961"/>
+</kw>
+<kw name="Add Element" library="XML">
+<arg>${root}</arg>
+<arg>&lt;name&gt;Grilled Cheese Sandwich&lt;/name&gt;</arg>
+<arg>xpath=food[6]</arg>
+<doc>Adds a child element to the specified element.</doc>
+<status status="PASS" starttime="20210522 16:02:33.961" endtime="20210522 16:02:33.961"/>
+</kw>
+<kw name="Add Element" library="XML">
+<arg>${root}</arg>
+<arg>&lt;price&gt;$2.95&lt;/price&gt;</arg>
+<arg>xpath=food[6]</arg>
+<doc>Adds a child element to the specified element.</doc>
+<status status="PASS" starttime="20210522 16:02:33.961" endtime="20210522 16:02:33.961"/>
+</kw>
+<kw name="Add Element" library="XML">
+<arg>${root}</arg>
+<arg>&lt;description&gt;Yummy melted cheese on grilled sourdough slice&lt;/description&gt;</arg>
+<arg>xpath=food[6]</arg>
+<doc>Adds a child element to the specified element.</doc>
+<status status="PASS" starttime="20210522 16:02:33.962" endtime="20210522 16:02:33.962"/>
+</kw>
+<kw name="Add Element" library="XML">
+<arg>${root}</arg>
+<arg>&lt;calories&gt;300&lt;/calories&gt;</arg>
+<arg>xpath=food[6]</arg>
+<doc>Adds a child element to the specified element.</doc>
+<status status="PASS" starttime="20210522 16:02:33.962" endtime="20210522 16:02:33.962"/>
+</kw>
+<kw name="Save Xml" library="XML">
+<arg>${root}</arg>
+<arg>${XML_MENU_PATH}</arg>
+<doc>Saves the given element to the specified file.</doc>
+<msg timestamp="20210522 16:02:33.963" level="INFO" html="true">XML saved to &lt;a href="file://C:\development\robot-scripts\intro\inputs\xml\menu.xml"&gt;C:\development\robot-scripts\intro\inputs\xml\menu.xml&lt;/a&gt;.</msg>
+<status status="PASS" starttime="20210522 16:02:33.962" endtime="20210522 16:02:33.963"/>
+</kw>
+<status status="PASS" starttime="20210522 16:02:33.960" endtime="20210522 16:02:33.963"/>
+</kw>
+<tag>XML</tag>
+<status status="PASS" starttime="20210522 16:02:33.959" endtime="20210522 16:02:33.964"/>
+</test>
+<doc>These are some XML tests</doc>
+<status status="FAIL" starttime="20210522 16:02:33.910" endtime="20210522 16:02:33.965"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="1" skip="0">XML</stat>
+</tag>
+<suite>
+<stat pass="4" fail="1" skip="0" id="s1" name="Xml Tests">Xml Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

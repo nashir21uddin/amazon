@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.8.9 on win32)" generated="20210522 16:36:30.582" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\development\robot-scripts\script-order\tests">
+<suite id="s1-s1" name="Feature 2" source="C:\development\robot-scripts\script-order\tests\Feature_2.robot">
+<test id="s1-s1-t1" name="Feature 2 Test 1">
+<kw name="Log" library="BuiltIn">
+<arg>This is test 1 of feature 2</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210522 16:36:30.608" level="INFO">This is test 1 of feature 2</msg>
+<status status="PASS" starttime="20210522 16:36:30.608" endtime="20210522 16:36:30.608"/>
+</kw>
+<status status="PASS" starttime="20210522 16:36:30.607" endtime="20210522 16:36:30.608"/>
+</test>
+<test id="s1-s1-t2" name="Feature 2 Test 2">
+<kw name="Log" library="BuiltIn">
+<arg>This is test 2 of feature 2</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210522 16:36:30.610" level="INFO">This is test 2 of feature 2</msg>
+<status status="PASS" starttime="20210522 16:36:30.610" endtime="20210522 16:36:30.610"/>
+</kw>
+<status status="PASS" starttime="20210522 16:36:30.610" endtime="20210522 16:36:30.611"/>
+</test>
+<status status="PASS" starttime="20210522 16:36:30.605" endtime="20210522 16:36:30.613"/>
+</suite>
+<suite id="s1-s2" name="Feature 3" source="C:\development\robot-scripts\script-order\tests\Feature_3.robot">
+<test id="s1-s2-t1" name="Feature 3 Test 1">
+<kw name="Log" library="BuiltIn">
+<arg>This is test 1 of feature 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210522 16:36:30.617" level="INFO">This is test 1 of feature 3</msg>
+<status status="PASS" starttime="20210522 16:36:30.617" endtime="20210522 16:36:30.617"/>
+</kw>
+<status status="PASS" starttime="20210522 16:36:30.616" endtime="20210522 16:36:30.617"/>
+</test>
+<test id="s1-s2-t2" name="Feature 3 Test 2">
+<kw name="Log" library="BuiltIn">
+<arg>This is test 2 of feature 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210522 16:36:30.619" level="INFO">This is test 2 of feature 3</msg>
+<status status="PASS" starttime="20210522 16:36:30.619" endtime="20210522 16:36:30.619"/>
+</kw>
+<status status="PASS" starttime="20210522 16:36:30.619" endtime="20210522 16:36:30.621"/>
+</test>
+<status status="PASS" starttime="20210522 16:36:30.614" endtime="20210522 16:36:30.622"/>
+</suite>
+<suite id="s1-s3" name="Feature 1" source="C:\development\robot-scripts\script-order\tests\Feature_1.robot">
+<test id="s1-s3-t1" name="Feature 1 Test 1">
+<kw name="Log" library="BuiltIn">
+<arg>This is test 1 of feature 1</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210522 16:36:30.627" level="INFO">This is test 1 of feature 1</msg>
+<status status="PASS" starttime="20210522 16:36:30.626" endtime="20210522 16:36:30.627"/>
+</kw>
+<status status="PASS" starttime="20210522 16:36:30.626" endtime="20210522 16:36:30.628"/>
+</test>
+<test id="s1-s3-t2" name="Feature 1 Test 2">
+<kw name="Log" library="BuiltIn">
+<arg>This is test 2 of feature 1</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210522 16:36:30.631" level="INFO">This is test 2 of feature 1</msg>
+<status status="PASS" starttime="20210522 16:36:30.631" endtime="20210522 16:36:30.631"/>
+</kw>
+<status status="PASS" starttime="20210522 16:36:30.630" endtime="20210522 16:36:30.631"/>
+</test>
+<status status="PASS" starttime="20210522 16:36:30.624" endtime="20210522 16:36:30.632"/>
+</suite>
+<meta name="Randomized">Suites (seed 1077323977591599193)</meta>
+<status status="PASS" starttime="20210522 16:36:30.584" endtime="20210522 16:36:30.634"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Feature 2">Tests.Feature 2</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="Feature 3">Tests.Feature 3</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s3" name="Feature 1">Tests.Feature 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
